@@ -1,0 +1,29 @@
+{
+  "name": "2020-telemetry-dashboard-server",
+  "version": "0.0.0",
+  "description": "Node.js server for 2020 telemetry dashboard server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frc8407/2020-telemetry-dashboard-server.git"
+  },
+  "keywords": [
+    "frc",
+    "infinite-recharge",
+    "dashboard",
+    "telemetry"
+  ],
+  "author": "kekland <kk.erzhan@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/frc8407/2020-telemetry-dashboard-server/issues"
+  },
+  "homepage": "https://github.com/frc8407/2020-telemetry-dashboard-server#readme",
+  "dependencies": {
+    "wpilib-nt-client": "^1.7.1"
+  }
+}
