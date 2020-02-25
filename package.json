@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/frc8407/2020-telemetry-dashboard-server#readme",
   "dependencies": {
+    "socket.io": "^2.3.0",
     "wpilib-nt-client": "^1.7.1"
   }
 }

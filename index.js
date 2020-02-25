@@ -1,4 +1,5 @@
 const ntClient = require('wpilib-nt-client');
+const io = require('socket.io')()
 
 const client = new ntClient.Client()
 
@@ -25,3 +26,7 @@ client.addListener((key, val, type, id) => {
     currentRobotData[stage1][stage2] = val
   }
 })
+
+setInterval(() => {
+  io.send(currentRobotData)
+}, 20)
