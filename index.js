@@ -1,5 +1,5 @@
 const ntClient = require('wpilib-nt-client');
-const io = require('socket.io')()
+const io = require('socket.io')(3008)
 
 const client = new ntClient.Client()
 
