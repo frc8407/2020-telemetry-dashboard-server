@@ -27,6 +27,10 @@ client.addListener((key, val, type, id) => {
   }
 })
 
+io.on('connection', (socket) => {
+  console.log("Connection!")
+})
+
 setInterval(() => {
   io.emit('update', currentRobotData)
-}, 20)
+}, 25)
