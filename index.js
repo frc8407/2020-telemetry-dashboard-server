@@ -28,5 +28,5 @@ client.addListener((key, val, type, id) => {
 })
 
 setInterval(() => {
-  io.send(currentRobotData)
+  io.emit('update', currentRobotData)
 }, 20)
