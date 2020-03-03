@@ -1,5 +1,6 @@
 const ntClient = require('wpilib-nt-client');
 const express = require('express')
+const _ = require('lodash')
 const io = require('socket.io')(3008)
 
 const client = new ntClient.Client()
@@ -17,14 +18,8 @@ const currentRobotData = {
 client.addListener((key, val, type, id) => {
   if (key.startsWith("/dashboard/")) {
     const localKey = key.split("/")[2]
-    const stage1 = localKey.split(".")[0]
-    const stage2 = localKey.split(".")[1]
 
-    if (!currentRobotData[stage1]) {
-      currentRobotData[stage1] = {}
-    }
-
-    currentRobotData[stage1][stage2] = val
+    _.set(currentRobotData, localKey, val)
   }
 })
 
