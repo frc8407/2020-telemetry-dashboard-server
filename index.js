@@ -1,4 +1,5 @@
 const ntClient = require('wpilib-nt-client');
+const express = require('express')
 const io = require('socket.io')(3008)
 
 const client = new ntClient.Client()
@@ -34,3 +35,8 @@ io.on('connection', (socket) => {
 setInterval(() => {
   io.emit('update', currentRobotData)
 }, 25)
+
+const app = express()
+app.use(express.static('../2020-telemetry-dashboard/www'))
+
+app.listen(8080)
