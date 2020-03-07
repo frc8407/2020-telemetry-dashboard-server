@@ -25,6 +25,16 @@ client.addListener((key, val, type, id) => {
 
 io.on('connection', (socket) => {
   console.log("Connection!")
+
+  socket.on('pid-update', (v) => {
+    const name = v.name
+    const settings = v.settings
+
+    client.Assign(settings.p, `/dashboard/pid/${name}/p`, true)
+    client.Assign(settings.i, `/dashboard/pid/${name}/i`, true)
+    client.Assign(settings.d, `/dashboard/pid/${name}/d`, true)
+    client.Assign(settings.ff, `/dashboard/pid/${name}/ff`, true)
+  })
 })
 
 setInterval(() => {
